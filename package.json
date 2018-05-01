@@ -3,8 +3,14 @@
   "version": "0.0.1",
   "description": "Launch Chrome and show TV code for youtube.com/leanback.",
   "main": "YouTubeTvCode.js",
+  "bin": {
+    "youtubetvcode" : "./YouTubeTvCode.js"
+  },
   "scripts": {
     "test": "make"
+  },
+  "dependencies":{
+    "puppeteer": "latest"
   },
   "repository": {
     "type": "git",
@@ -16,9 +22,10 @@
     "Chrome"
   ],
   "author": "Takashi SASAKI",
-  "license": "ISC",
+  "license": "MIT License",
   "bugs": {
-    "url": "https://github.com/TakashiSasaki/YouTubeTvCode/issues"
+    "url": "https://github.com/TakashiSasaki/YouTubeTvCode/issues",
+    "email": "takashi316@gmail.com"
   },
   "homepage": "https://github.com/TakashiSasaki/YouTubeTvCode#readme"
 }

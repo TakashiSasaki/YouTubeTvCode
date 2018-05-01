@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const puppeteer = require("puppeteer");
 
 async function main(){
@@ -6,7 +7,7 @@ async function main(){
     headless: false,
     waitUntil: 'networkidle',
     networkIdleTimeout: 5000,
-    userDataDir: "C:\\tmp\\puppeteer",
+    userDataDir: "/tmp/puppeteer",
     args: ['--start-fullscreen']
   });
   const page = await browser.newPage();
