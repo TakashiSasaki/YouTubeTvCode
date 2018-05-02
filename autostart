@@ -2,5 +2,6 @@
 @pcmanfm --desktop --profile LXDE-pi
 @xscreensaver -no-splash
 @point-rpi
-@/home/pi/ChromiumKiosk/autostart.sh
+@/home/pi/.config/lxsession/LXDE-pi/YouTubeTvCode.js
+
 
