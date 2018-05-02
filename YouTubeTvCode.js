@@ -7,18 +7,27 @@ const options = [
   headless: false,
   waitUntil: 'networkidle',
   networkIdleTimeout: 5000,
-  userDataDir: "/tmp/puppeteer",
-  args: ['--start-fullscreen', "---no-first-run", "--no-default-browse-check",
-  "--no-sandbox"]
+  userDataDir: "/home/pi/puppeteer",
+  args: [
+	  '--start-fullscreen',
+	  "---no-first-run", 
+	  //"--no-default-browse-check", 
+	  "--no-sandbox", 
+	  //"--disable-infobars", 
+	  //"--disable-session-crashed-bubble", 
+	  //"--disable-session-restore",  
+	  //"--noerrdialogs"
+  ]
 },
 {
   executablePath: "/usr/bin/chromium-browser",
   headless: false,
   waitUntil: 'networkidle',
   networkIdleTimeout: 5000,
-  userDataDir: "/tmp/puppeteer",
+  userDataDir: "/home/pi/puppeteer",
   args: ['--start-fullscreen', "---no-first-run", "--no-default-browse-check",
-  "--no-sandbox"]
+  "--no-sandbox", "--disable-infobars", "--disable-session-crashed-bubble",
+  "--disable-session-restore",  "--noerrdialogs"]
 },
 {
   executablePath: "/mnt/c/Program Files/Google/Chrome/Application/chrome.exe",
@@ -61,9 +70,11 @@ async function main(){
   const page = await browser.newPage();
   console.log("main^t: waiting for new page.");
   await page.waitFor(5000);
+  await await page.setViewport({width:0, height:0});
+  await page.waitFor(1000);
   console.log("main¥t: await page.goto(...)");
   await page.goto("https://www.youtube.com/tv#/settings?resume");
-  await page.waitFor(5000);
+  await page.waitFor(10000);
   console.log("main¥t: await page.$(...)");
   const x = await page.$("#settings-items > div.content > div.settings-list > div > div:nth-child(2)");
   if(x === null) {
@@ -84,5 +95,9 @@ async function main(){
 main().then(x => {
   console.log(x);
   //process.exit();
-}).catch(e=>console.log(e));
+}).catch(e => {
+  console.log(e);
+  process.exit();
+}
+);
 
