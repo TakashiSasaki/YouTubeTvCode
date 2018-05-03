@@ -4,13 +4,13 @@
   "description": "Launch Chrome and show TV code for youtube.com/leanback.",
   "main": "YouTubeTvCode.js",
   "bin": {
-    "youtubetvcode" : "./YouTubeTvCode.js"
+    "youtubetvcode": "./YouTubeTvCode.js"
   },
   "scripts": {
     "test": "make"
   },
-  "dependencies":{
-    "puppeteer": "latest"
+  "dependencies": {
+    "puppeteer": "^0.12.0"
   },
   "repository": {
     "type": "git",

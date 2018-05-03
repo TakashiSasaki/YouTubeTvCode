@@ -3,5 +3,5 @@
 test:
 	node YouTubeTvCode.js
 prepare:
-	sudo PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 npm i -g puppeteer
+	sudo npm uninstall puppeteer ; sudo npm uninstall -g puppeteer ; PUPPETEER_SKIP_CHROMIUM_DOWNLOAD=1 npm i puppeteer@0.12.0
 
